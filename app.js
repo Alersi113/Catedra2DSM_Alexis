@@ -4,7 +4,7 @@ console.log('JWT_SECRET en app.js:', process.env.JWT_SECRET);
 const app = express();
 const userController = require('./controllers/userController');
 const bookController = require('./controllers/bookController');
-
+const loanController = require('./controllers/loanController');
 
 app.use(express.json());
 
@@ -32,3 +32,6 @@ app.put('/restore/book', bookController.restoreBook);
 app.get('/book/:id', bookController.getBookById);
 
 app.put('/book/:id', bookController.updateBook);
+
+//Rutas para prestamos
+app.post('/loan', loanController.createLoan);

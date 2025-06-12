@@ -30,11 +30,11 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
-      loan_date: {
+      loanDate: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      devolution_date: {
+      devolutionDate: {
         type: Sequelize.STRING,
         allowNull: false
       },
