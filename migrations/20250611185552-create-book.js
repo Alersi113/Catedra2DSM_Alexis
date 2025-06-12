@@ -9,15 +9,19 @@ module.exports = {
         primaryKey: true,
         allowNull: false
       },
+      title: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       author: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      gender: {
+      genre: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      publish_date: {
+      publishDate: {
         type: Sequelize.DATEONLY,
         allowNull: false
       },

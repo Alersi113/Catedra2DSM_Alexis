@@ -5,27 +5,30 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     return await queryInterface.bulkInsert('books', [
       {
+        title: 'Cien años de soledad',
         author: 'Gabriel Garcia Marquez',
-        gender: 'Fiction',
-        publish_date: '1985-03-01',
+        genre: 'Fiction',
+        publishDate: '1985-03-01',
         available: true,
         eliminated: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
+        title: 'El amor en los tiempos del cólera',
         author: 'Isabel Allende',
-        gender: 'Historical',
-        publish_date: '1990-09-15',
+        genre: 'Historical',
+        publishDate: '1990-09-15',
         available: true,
         eliminated: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
+        title: 'La casa de los espíritus',
         author: 'Sony',
-        gender: 'Technology',
-        publish_date: '1990-09-15',
+        genre: 'Technology',
+        publishDate: '1990-09-15',
         available: true,
         eliminated: false,
         createdAt: new Date(),

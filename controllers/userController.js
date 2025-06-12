@@ -67,24 +67,22 @@ const login = async (req, res) => {
     const { mail, password } = req.body; 
 
     try {
-        // Buscar usuario por correo
         const user = await User.findOne({ where: { mail } });
 
         if (!user) {
             return res.status(400).json({
                 success: false,
                 error: true,
-                message: 'Invalid credentials'
+                message: 'Credenciales inválidas'
             });
         }
 
-        // Comparar contraseña
         const isPasswordValid = bcryptjs.compareSync(password, user.password);
         if (!isPasswordValid) {
             return res.status(400).json({
                 success: false,
                 error: true,
-                message: 'Invalid credentials'
+                message: 'Credenciales inválidas'
             });
         }
 
@@ -95,7 +93,7 @@ const login = async (req, res) => {
         const userData = {
             id: user.id,
             name: user.name,
-            lastName: user.lastName,  // coincide con el campo en la DB
+            lastName: user.lastName, 
             mail: user.mail,
             //token
         };
@@ -104,7 +102,7 @@ const login = async (req, res) => {
             success: true,
             error: false,
             data: userData,
-            message: 'Login successful',
+            message: 'Inicio de sesión exitoso',
         });
 
     } catch (error) {
@@ -112,7 +110,7 @@ const login = async (req, res) => {
         return res.status(500).json({
             success: false,
             error: true,
-            message: 'Login failed due to server error',
+            message: 'Error del servidor',
         });
     }
 };
