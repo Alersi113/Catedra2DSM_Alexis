@@ -2,9 +2,9 @@ const express = require('express');
 require('dotenv').config();
 console.log('JWT_SECRET en app.js:', process.env.JWT_SECRET);
 const app = express();
-const userController = require('./controllers/userController');
-const bookController = require('./controllers/bookController');
-const loanController = require('./controllers/loanController');
+const userController = require('./src/controllers/userController');
+const bookController = require('./src/controllers/bookController');
+const loanController = require('./src/controllers/loanController');
 
 app.use(express.json());
 
