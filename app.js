@@ -1,6 +1,9 @@
 const express = require('express');
+require('dotenv').config();
+console.log('JWT_SECRET en app.js:', process.env.JWT_SECRET);
 const app = express();
 const userController = require('./controllers/userController');
+
 
 app.use(express.json());
 
@@ -11,3 +14,9 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);
 });
+
+app.post('/login', userController.login);
+
+app.get('/me', userController.getProfile);
+
+
